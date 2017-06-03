@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from webservice.views import hello_world_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^hello$', hello_world_view, name='hello_world')
 ]
