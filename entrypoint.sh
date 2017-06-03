@@ -9,7 +9,7 @@ if [ -z $1 ]; then
 fi
 
 if [ "$COMMAND" = "uwsgi" ]; then
-	COMMAND="/usr/local/bin/uwsgi -s 0.0.0.0:$(printenv PORT) --module example.wsgi:application"
+	COMMAND="/usr/local/bin/uwsgi --http 0.0.0.0:$(printenv PORT) --module example.wsgi:application"
 fi
 
 eval $COMMAND
