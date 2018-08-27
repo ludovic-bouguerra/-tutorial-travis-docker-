@@ -1,6 +1,13 @@
 sudo: required
 language: python
 services:
-  - docker
+- docker
 script:
-  -  docker-compose run app ./manage.py test
+- docker-compose run app ./manage.py test
+deploy:
+  provider: heroku
+  api_key:
+    secure: HtEw7tdxuQkg542viUuDab0OUQdGhGDfJ6BYToyZ8JUDjOWsRKrt3VPPVuh0X8+1qNkPZ+XbGo9LMoYHa8irAh0gkqelXcekOynQHagY3uVHEHzigwvaqTs80lNEdYm81XmnPRFINSlPgWM2XND+RALvgZXreG+KWSlz7EeZgqRTZ2Lq5DWRfiEHVlGNZ+5iKfjPuECuvkriiXI193KlZP/0GRzvD58j+dEKDhPy+pqqvKXgQI9uHqByKxeySg+na+BTBzfB1wVKxB2U7y4V6RoGoPP5EF3Q4B5o6AWhmza1fHFHGicziWK8XeumTvFiPHcjsP47EoxEcf3ItOzlMBT3Cnd0apbQiaxzukcJEwsda3gfHPzkXQG8acAMo+Vq2CseALMnD6MEROX6bjqOedSJPvBY1fWbbenBuj4HryevDiJpf02C/UBKPokwEBNdaJemoyQ6GRI60+RuKk1d3hpQg3M3CAY+eXS10Hk+q9AqnEE2sbBTpJ74gd8dZEX99CTLcwVMOXAT3cQgi3jUe2cxepc279bl9VIls/zsxwxnfHND3efZryzGxrb78N6tLcq6pUkIva8WTGLKpbwC4GLfryDWg0ABvKZ/v4UAPd81ZkulHwAe9WTdgl1gJUp2e6c+aCDPEbXZqyukd16Bmas84SdWDNcc+cV/nK5m8Pw=
+  app: infinite-ravine-54652
+  on:
+    repo: ludovic-bouguerra/tutorial-travis-docker
